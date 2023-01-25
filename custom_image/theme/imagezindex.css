@@ -1,0 +1,7 @@
+.ck-content .image {
+	z-index: 2;
+}
+
+.ck-content .image.image-style-absolute.image-zindex-back {
+	z-index: 0;
+}

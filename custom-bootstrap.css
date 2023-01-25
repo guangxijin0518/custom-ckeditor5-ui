@@ -1,0 +1,55 @@
+/* Give the editor some space and limits using a border. */
+.ck-editor {
+  margin: 1em 0;
+  border: 1px solid hsla(0, 0%, 0%, 0.1);
+  border-radius: 4px;
+}
+
+/* Adding internal spacing, border and background to the toolbar.  */
+.ck-editor .btn-toolbar {
+  padding: .5rem;
+  background: hsl(240, 14%, 97%);
+  border-bottom: 1px solid hsla(0, 0%, 0%, 0.1);
+}
+
+/* Tweaking the editable area for better readability. */
+.ck-editor .ck-editor__editable {
+  padding: 2em 2em 1em;
+  overflow: auto;
+}
+
+/* When in read–only mode, the editable should fade out. */
+.ck-editor .ck-editor__editable.ck-read-only {
+  background: hsl(0, 0%, 98%);
+  color: hsl(0, 0%, 47%);
+}
+
+/* Make sure the headings dropdown button does not change its size
+as different headings are selected. */
+.ck-editor .dropdown-toggle span {
+  display: inline-block;
+  width: 100px;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: bottom;
+}
+
+/* Make the headings dropdown items visually distinctive. */
+.ck-editor .heading-item_heading1 { font-size: 1.5em; }
+.ck-editor .heading-item_heading2 { font-size: 1.3em; }
+.ck-editor .heading-item_heading3 { font-size: 1.1em; }
+
+.ck-editor [class*="heading-item_"] {
+  line-height: 22px;
+  padding: 10px;
+}
+
+.ck-editor [class*="heading-item_heading"] {
+font-weight: bold;
+}
+
+/* Give the basic styles buttons the icon–like look and feel. */
+.ck-editor #bold { font-weight: bold; }
+.ck-editor #italic { font-style: italic; }
+.ck-editor #underline { text-decoration: underline; }

@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" />
+    <link rel="stylesheet" href="custom-bootstrap.css" />
+    <link rel="stylesheet" href="dist/constructionNotesAdd.css" />
+    <title>Bootstrap Editor</title>
+  </head>
+  <body>
+    <div id="constructionNotesAdd">
+      <div class="notes-header">
+        <div class="left-side">
+          <i class="fas fa-arrow-left"></i>
+          <span>Note Editor</span>
+        </div>
+        <div class="right-side">
+          <i class="fas fa-share-alt"></i>
+          <i class="fas fa-download"></i>
+          <i class="fas fa-trash-alt"></i>
+          <i class="fas fa-times"></i>
+          <i class="fa fa-pencil-alt"></i>
+        </div>
+      </div>
+      <div class="notes-editor">
+        <div class="content">
+          <div class="notes-editor__editable-container">
+            <div class="notes-editor__editable">
+              <!--h1>Document</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Maiores soluta excepturi cupiditate? Minus accusantium,
+                sit impedit aut fugiat totam dolores voluptatibus autem perferendis.
+                Praesentium qui doloremque culpa? Magni, explicabo rem!
+              </p-->
+            </div>
+          </div>
+          <div class="controls">
+            <span ng-click="vm.zoomOut()">-</span>
+            <i class="fas fa-search"></i>
+            <span ng-click="vm.zoomIn()">+</span>
+          </div>
+          <i class="fas fa-angle-left"></i>
+          <i class="fas fa-angle-right"></i>
+        </div>
+        <div class="notes-editor__tool-panel">
+          <div class="btn-group btn-group-toggle toggle-panel" data-toggle="buttons">
+            <label class="btn btn-light btn-sm active" ng-click="vm.toggleToolPanel(true)">
+              <input type="radio" name="options" id="option1" autocomplete="off" checked> TEXT
+            </label>
+            <label class="btn btn-light btn-sm">
+              <input type="radio" name="options" id="option2" autocomplete="off"> MEDIA
+            </label>
+          </div>
+          <div class="tool-panels">
+            <div class="panel panel-text"">
+              <div class="panel-part">
+                <label class="panel-part-header">Font</label>
+                <div class="panel-part-body">
+                  <div class="btn-group" role="group" aria-label="font-families">
+                    <div class="dropdown font-family">
+                      <button
+                        class="btn btn-light btn-sm dropdown-toggle"
+                        type="button"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        <span>Montserrat</span>
+                        <div class="right-shadow"/>
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="font-family-button"></div>
+                    </div>
+                  </div>
+                  <div class="btn-group font-weight-size" role="group" aria-label="font-weight-size">
+                    <div class="dropdown font-weight">
+                      <button
+                        class="btn btn-light btn-sm dropdown-toggle"
+                        type="button"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        <span>Regular</span>
+                        <div class="right-shadow"/>
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="font-weight-button"></div>
+                    </div>
+                    <div class="dropdown font-size">
+                      <button
+                        class="btn btn-light btn-sm dropdown-toggle"
+                        type="button"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        <span>14</span>
+                        <div class="right-shadow"/>
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="font-weight-button"></div>
+                    </div>
+                  </div>
+                  <div class="btn-group font-others" role="group" aria-label="font-families">
+                    <div class="buttons">
+                      <button type="button" class="btn btn-light btn-sm" id="bold">B</button>
+                      <button type="button" class="btn btn-light btn-sm" id="italic">I</button>
+                      <button type="button" class="btn btn-light btn-sm" id="underline">U</button>
+                    </div>
+                    <div class="dropdown font-transform">
+                      <button class="btn btn-light btn-sm dropdown-toggle"
+                        type="button"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        <span>Aa</span>
+                        <div class="right-shadow"/>
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="font-transform-button"></div>
+                    </div>
+                    <div class="dropdown font-color">
+                      <button class="btn btn-light btn-sm dropdown-toggle"
+                        type="button"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        <div class="color-shower"></div>
+                        <div class="right-shadow"/>
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="font-color-button"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel-part">
+                <label class="panel-part-header">Alignment</label>
+                <div class="panel-part-body">
+                  <div class="btn-group btn-group-toggle align-group">
+                    <button class="btn btn-light btn-sm btn-align-left active">
+                      <i class="fas fa-align-left"></i>
+                    </button>
+                    <button class="btn btn-light btn-sm btn-align-center">
+                      <i class="fas fa-align-center"></i>
+                    </button>
+                    <button class="btn btn-light btn-sm btn-align-right">
+                      <i class="fas fa-align-right"></i>
+                    </button>
+                    <button class="btn btn-light btn-sm btn-align-justify">
+                      <i class="fas fa-align-justify"></i>
+                    </button>
+                  </div>
+                  <div class="btn-group btn-group-toggle indent-toggle">
+                    <button class="btn btn-light btn-sm indent-btn">
+                      &nbsp;<i class="fas fa-indent"></i>
+                    </button>
+                    <button class="btn btn-light btn-sm outdent-btn">
+                      &nbsp;<i class="fas fa-outdent"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="panel-part">
+                <label class="panel-part-header">Spacing</label>
+                <div class="panel-part-body">
+                  <div class="btn-group letter-line-spacing" role="group" aria-label="font-weight-size">
+                    <div class="dropdown" id="letter-spacing">
+                      <button class="btn btn-light btn-sm dropdown-toggle"
+                        type="button"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        <span>Regular</span>
+                        <div class="right-shadow"/>
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="letter-spacing-button"></div>
+                    </div>
+                    <div class="dropdown" id="line-spacing">
+                      <button class="btn btn-light btn-sm dropdown-toggle"
+                        type="button"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        <span>14</span>
+                        <div class="right-shadow"/>
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="line-spacing-button"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel-part">
+                <label class="panel-part-header">Bullets & Lists</label>
+                <div class="panel-part-body">
+                  <div class="btn-group bullets-lists" role="group" aria-label="font-families">
+                    <div class="dropdown bulleted-list">
+                      <button class="btn btn-light btn-sm dropdown-toggle"
+                        type="button"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        <span class="fas fa-list-ul"></span>
+                        <div class="right-shadow"/>
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="bulleted-list-button"></div>
+                    </div>
+                    <div class="dropdown numbered-list">
+                      <button class="btn btn-light btn-sm dropdown-toggle"
+                        type="button"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        <span class="fas fa-list-ol"></span>
+                        <div class="right-shadow"/>
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="numbered-list-button"></div>
+                    </div>
+                    <div class="dropdown multilevel-list">
+                      <button class="btn btn-light btn-sm dropdown-toggle"
+                        type="button"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        <span class="fas fa-stream"></span>
+                        <div class="right-shadow"/>
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="multilevel-list-button"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div ng-class="panel panel-media" ng-class="['panel', 'panel-media', {'hide': vm.isTextPanel}]">
+              <div class="panel-part">
+                <label class="panel-part-header">Images</label>
+                <div class="panel-part-body">
+                  <div class="btn-group" role="group" aria-label="add-image">
+                    <button class="btn btn-light btn-sm add-image" type="button">+ Add Image</button>
+                    <input type="file" name="imagefile" accept="image/*" class="image-file"/>
+                  </div>
+                  <div class="btn-group image-position" role="group" aria-label="font-weight-size">
+                    <div class="dropdown image-style">
+                      <button class="btn btn-light btn-sm dropdown-toggle"
+                        type="button"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        <span>Full size</span>
+                        <div class="right-shadow"/>
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="font-weight-button"></div>
+                    </div>
+                    <div class="dropdown image-back-front">
+                      <button
+                        class="btn btn-light btn-sm dropdown-toggle"
+                        type="button"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        <span>Bihind Text</span>
+                        <div class="right-shadow"/>
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="font-weight-button"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="dist/bundle.js"></script>
+    <script>
+      BootStrapEditor.create(document.querySelector( '.notes-editor__editable' ))
+      .then(editor => {
+        window.editor = editor;
+        console.log('editor data', JSON.stringify(editor.getData()));
+      })
+      .catch(err => {
+        console.error(err.stack);
+      });
+    </script>
+  </body>
+</html>

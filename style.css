@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
+.ck-content {
+	width: 15.8cm;
+	margin: 0;
+	padding: 2cm;
+	background-color: white;
+	color: #000;
+	font-size: 15px;
+	font-family: "Poppins",sans-serif;
+}
+/* basic-styles */
+.ck-content code {
+	background-color: hsla(0, 0%, 78%, 0.3);
+	padding: .15em;
+	border-radius: 2px;
+}
+
+/* fontsize */
+.text-tiny {
+	font-size: .7em;
+}
+
+.text-small {
+	font-size: .85em;
+}
+
+.text-big {
+	font-size: 1.4em;
+}
+
+.text-huge {
+	font-size: 1.8em;
+}
+
+/* heading */
+.ck.ck-heading_heading1 {
+	font-size: 20px;
+}
+
+.ck.ck-heading_heading2 {
+	font-size: 17px;
+}
+
+.ck.ck-heading_heading3 {
+	font-size: 14px;
+}
+
+.ck[class*="ck-heading_heading"] {
+	font-weight: bold;
+}
+
+/* image */
+.ck-content .image {
+	clear: both;
+	text-align: center;
+
+	/* Make sure there is some space between the content and the image. */
+	margin: 1em 0;
+}
+
+.ck-content .image > img {
+	display: block;
+	margin: 0 auto;
+	max-width: 100%;
+}
+
+/* image caption */
+.ck-content .image > figcaption {
+	color: hsl(0, 0%, 20%);
+	background-color: hsl(0, 0%, 97%);
+	padding: .6em;
+	font-size: .75em;
+	outline-offset: -1px;
+}
+
+/* image style */
+:root {
+	--ck-image-style-spacing: 1.5em;
+}
+
+.ck-content .image-style-side,
+.ck-content .image-style-align-left,
+.ck-content .image-style-align-center,
+.ck-content .image-style-align-right {
+	max-width: 50%;
+}
+
+.ck-content .image-style-side {
+	float: right;
+	margin-left: var(--ck-image-style-spacing);
+}
+
+.ck-content .image-style-align-left {
+	float: left;
+	margin-right: var(--ck-image-style-spacing);
+}
+
+.ck-content .image-style-align-center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.ck-content .image-style-align-right {
+	float: right;
+	margin-left: var(--ck-image-style-spacing);
+}

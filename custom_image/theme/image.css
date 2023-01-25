@@ -1,0 +1,38 @@
+/*
+ * Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+ */
+
+.ck-content .image {
+	clear: both;
+	text-align: center;
+	position: relative;
+
+	/* Make sure there is some space between the content and the image. */
+	margin: 1em 0;
+
+	& > img {
+		/* Prevent unnecessary margins caused by line-height (see #44). */
+		display: block;
+
+		/* Center the image if its width is smaller than the content's width. */
+		margin: 0 auto;
+
+		/* Make sure the image never exceeds the size of the parent container (ckeditor/ckeditor5-ui#67). */
+		width: 100%;
+	}
+}
+
+.ck-content:not(.ck-read-only) .image.ck-widget_selected::after {
+	position: absolute;
+	bottom: -10px;
+	right: -10px;
+	content: ' ';
+	cursor: nwse-resize;
+	width: 20px;
+	height: 20px;
+	background: white;
+	border-radius: 50%;
+	border: 2px solid blue;
+	z-index: 3;
+}
